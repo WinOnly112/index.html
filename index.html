@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>我的產品商店</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>我的產品商店</h1>
+    <button id="cart-btn">購物車 (<span id="cart-count">0</span>)</button>
+  </header>
+
+  <main>
+    <section id="products" class="products-grid" aria-live="polite">
+      <!-- 產品清單由 script.js 動態載入 -->
+    </section>
+
+    <aside id="cart" class="cart hidden" aria-hidden="true">
+      <h2>購物車</h2>
+      <ul id="cart-items"></ul>
+      <div class="cart-summary">
+        <div>合計: NT$ <span id="cart-total">0.00</span></div>
+        <button id="checkout-btn">結帳</button>
+        <button id="close-cart">關閉</button>
+      </div>
+    </aside>
+
+    <div id="checkout" class="modal hidden" aria-hidden="true">
+      <div class="modal-content">
+        <h2>結帳資訊</h2>
+        <form id="checkout-form">
+          <label>姓名<br><input type="text" name="name" required></label>
+          <label>電子郵件<br><input type="email" name="email" required></label>
+          <label>地址<br><input type="text" name="address" required></label>
+          <div class="form-actions">
+            <button type="submit">送出訂單（模擬）</button>
+            <button type="button" id="cancel-checkout">取消</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="order-result" class="modal hidden" aria-hidden="true">
+      <div class="modal-content">
+        <h2>訂單已送出</h2>
+        <p id="order-message"></p>
+        <button id="close-result">關閉</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
